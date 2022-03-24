@@ -50,8 +50,8 @@ namespace QualisysRealTime.Unity
                 // TDW added code from here to... 3/17/2022
                 newMarker.AddComponent<Rigidbody>();
                 newMarker.GetComponent<Rigidbody>().useGravity = false;
-                //newMarker.AddComponent<CapsuleCollider>(); 
-                //newMarker.GetComponent<CapsuleCollider>().isTrigger = true;
+                newMarker.AddComponent<CapsuleCollider>(); 
+                newMarker.GetComponent<CapsuleCollider>().isTrigger = true;
                 // here
                 markers.Add(newMarker);
             }

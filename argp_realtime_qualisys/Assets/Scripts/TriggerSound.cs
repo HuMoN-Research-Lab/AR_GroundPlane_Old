@@ -6,29 +6,38 @@ public class TriggerSound : MonoBehaviour
 {
     // reference to the AudioClip we want to play on trigger enter.
     public AudioClip soundTrigger;
-    private float velocity; 
-    private float previous;
+  
+    public float dwell_time_threshold; // how many frames we need to detect before we trigger the sound
+
+    private float dwell_time_tracker; // tracks the number of frames that the object has been inside of the collider
 
 
-    /// OnTriggerEnter is called when the Collider 'other' enters the trigger.
-    void OnTriggerEnter(Collider other)
+    /// OnTriggerStay is called almost every frame; https://docs.unity3d.com/ScriptReference/Collider.OnTriggerStay.html
+    void OnTriggerStay(Collider other)
     {
-        velocity = (other.GetComponent<Rigidbody>().position.z - previous) / Time.deltaTime;
-        previous = other.GetComponent<Rigidbody>().position.z;
+        // at some point, I need to alter this if statement to take in foot plate markers only
+        //if(other.name == "L-Frame O") 
+        //{
+        dwell_time_tracker += 1; // add to the tracker for every frame
+    
 
-        float this_velocity = Mathf.Sqrt(Mathf.Pow(velocity,2f));
+            if (dwell_time_tracker == dwell_time_threshold)
+            {
+
+                // play the collect sound (at the same position as the target, 100% volume)
+                AudioSource.PlayClipAtPoint(soundTrigger, transform.position, 1.0f);
+
+            }
+        //}
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        // at some point, I need to alter this if statement to take in foot plate markers only
+        //if(other.name == "L-Frame O")
+        //{
+        dwell_time_tracker = 0;
          
-
-        if (this_velocity < 1)
-        {
-            // disable the whole GameObject
-            gameObject.SetActive(false);
-
-            Debug.Log("Collision!");
-            Debug.Log(this_velocity);
-
-            // play the collect sound (at the same position as the target, 100% volume)
-            AudioSource.PlayClipAtPoint(soundTrigger, transform.position, 1.0f);
         }
     }
 }
