@@ -38,7 +38,7 @@ public class TriggerSound : MonoBehaviour
         //{
         dwell_time_tracker = 0;
          
-        }
+        
     }
 }
 
