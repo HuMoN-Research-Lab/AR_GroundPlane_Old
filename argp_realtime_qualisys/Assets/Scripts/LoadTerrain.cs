@@ -16,7 +16,7 @@ public class LoadTerrain : MonoBehaviour
         var Projector3_Pos_XYZ = GameObject.Find("CamProjector3").transform.position;
 
         // Load in terrain csv
-        TextAsset terrain_file = Resources.Load<TextAsset>("terrain_test");
+        TextAsset terrain_file = Resources.Load<TextAsset>("configuration_1_VisHard_BioEasy");
 
         // split up the data by line
         string[] terrain_info = terrain_file.text.Split(new char[] { '\n' });
