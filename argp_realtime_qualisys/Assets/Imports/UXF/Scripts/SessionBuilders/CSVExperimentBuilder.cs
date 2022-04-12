@@ -48,6 +48,7 @@ namespace UXF
             // the trial will be created with the settings from the values from the table
             // if "block_num" is specified in the table, the trial will be added to the block with that number
             session.BuildFromTable(table, copyToResults);
+
         }
     }
 

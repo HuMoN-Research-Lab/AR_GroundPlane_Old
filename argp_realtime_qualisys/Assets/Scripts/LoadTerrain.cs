@@ -3,12 +3,12 @@ using System.Collections.Generic;
 //using System;
 using UnityEngine;
 
+using UXF;
+
 public class LoadTerrain : MonoBehaviour
 {
-    //public Vector3 Projector1_Pos_XYZ;
-    // Start is called before the first frame update
     
-    void Start()
+    public void GenerateTerrain()
     {
         // get the positions of each of the projectors
         var Projector1_Pos_XYZ = GameObject.Find("CamProjector1").transform.position;
@@ -16,7 +16,7 @@ public class LoadTerrain : MonoBehaviour
         var Projector3_Pos_XYZ = GameObject.Find("CamProjector3").transform.position;
 
         // Load in terrain csv
-        TextAsset terrain_file = Resources.Load<TextAsset>("configuration_1_VisHard_BioEasy");
+        TextAsset terrain_file = Resources.Load<TextAsset>("mirrored_configuration_1_VisEasy_BioEasy");
 
         // split up the data by line
         string[] terrain_info = terrain_file.text.Split(new char[] { '\n' });
