@@ -8,15 +8,17 @@ using UXF;
 public class LoadTerrain : MonoBehaviour
 {
     
-    public void GenerateTerrain()
+    public void GenerateTerrain(Trial trial)
     {
         // get the positions of each of the projectors
         var Projector1_Pos_XYZ = GameObject.Find("CamProjector1").transform.position;
         var Projector2_Pos_XYZ = GameObject.Find("CamProjector2").transform.position;
         var Projector3_Pos_XYZ = GameObject.Find("CamProjector3").transform.position;
 
-        // Load in terrain csv
-        TextAsset terrain_file = Resources.Load<TextAsset>("mirrored_configuration_1_VisEasy_BioEasy");
+        // Get file name from the world
+        string file_name = trial.settings.GetString("File_Name");
+
+        TextAsset terrain_file = Resources.Load<TextAsset>(file_name);
 
         // split up the data by line
         string[] terrain_info = terrain_file.text.Split(new char[] { '\n' });
