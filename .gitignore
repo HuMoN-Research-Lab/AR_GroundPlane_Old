@@ -60,7 +60,9 @@ crashlytics-build.properties
 
 # TDW Manually Added
 .vscode/
-
-argp_realtime_qualisys/Library/ArtifactDB
-argp_realtime_qualisys/Library/CurrentLayout-default.dwlt
-argp_realtime_qualisys/Library/SourceAssetDB
+Library/
+Logs/
+obj/
+Packages/
+ProjectSettings/
+Temp/

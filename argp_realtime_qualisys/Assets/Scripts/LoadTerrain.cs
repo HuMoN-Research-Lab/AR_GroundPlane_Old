@@ -10,6 +10,7 @@ public class LoadTerrain : MonoBehaviour
     
     public void GenerateTerrain(Trial trial)
     {
+        Debug.Log("In GenerateTerrain!");
         // get the positions of each of the projectors
         var Projector1_Pos_XYZ = GameObject.Find("CamProjector1").transform.position;
         var Projector2_Pos_XYZ = GameObject.Find("CamProjector2").transform.position;
@@ -17,6 +18,7 @@ public class LoadTerrain : MonoBehaviour
 
         // Get file name from the world
         string file_name = trial.settings.GetString("File_Name");
+        Debug.Log(file_name);
 
         TextAsset terrain_file = Resources.Load<TextAsset>(file_name);
 
