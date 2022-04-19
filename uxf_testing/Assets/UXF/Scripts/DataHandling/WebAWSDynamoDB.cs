@@ -164,7 +164,7 @@ namespace UXF
         /// <param name="dataType"></param>
         /// <param name="optionalTrialNum"></param>
         /// <returns></returns>
-        public override string HandleJSONSerializableObject(List<object> serializableObject, string experiment, string ppid, int sessionNum, string dataName, UXFDataType dataType, int optionalTrialNum)
+        public override string HandleJSONSerializableObjectList(List<object> serializableObject, string experiment, string ppid, int sessionNum, string dataName, UXFDataType dataType, int optionalTrialNum)
         {
             if (!CheckCurrentTargetOK()) return "not supported in editor";
             // turn list<object> into Dict with one key: data

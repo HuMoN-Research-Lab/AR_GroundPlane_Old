@@ -43,7 +43,7 @@ namespace UXF.Examples
             return "Data printed to console."; 
         }
 
-        public override string HandleJSONSerializableObject(List<object> serializableObject, string experiment, string ppid, int sessionNum, string dataName, UXFDataType dataType, int optionalTrialNum = 0)
+        public override string HandleJSONSerializableObjectList(List<object> serializableObject, string experiment, string ppid, int sessionNum, string dataName, UXFDataType dataType, int optionalTrialNum = 0)
         {
             Debug.LogFormat("Handling a JSON Serializale Object for session: {0}, {1}, {2}", experiment, ppid, sessionNum);
             Debug.LogFormat("The data name is: {0}, and the type is: ", dataName, dataType);

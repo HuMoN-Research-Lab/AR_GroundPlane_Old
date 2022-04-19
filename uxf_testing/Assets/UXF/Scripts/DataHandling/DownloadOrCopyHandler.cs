@@ -44,7 +44,7 @@ namespace UXF.UI
             return fname;
         }
 
-        public override string HandleJSONSerializableObject(List<object> serializableObject, string experiment, string ppid, int sessionNum, string dataName, UXFDataType dataType, int optionalTrialNum = 0)
+        public override string HandleJSONSerializableObjectList(List<object> serializableObject, string experiment, string ppid, int sessionNum, string dataName, UXFDataType dataType, int optionalTrialNum = 0)
         {
             if (dataType != UXFDataType.TrialResults && trialResultsOnly) return "NA";
             if (dataType.GetDataLevel() == UXFDataLevel.PerTrial) dataName = string.Format("{0}_T{1:000}", dataName, optionalTrialNum);

@@ -20,7 +20,7 @@ namespace UXF
         public abstract bool CheckIfRiskOfOverwrite(string experiment, string ppid, int sessionNum, string rootPath = ""); 
         public virtual void SetUp() { }
         public abstract string HandleDataTable(UXFDataTable table, string experiment, string ppid, int sessionNum, string dataName, UXFDataType dataType, int optionalTrialNumber = 0);
-        public abstract string HandleJSONSerializableObject(List<object> serializableObject, string experiment, string ppid, int sessionNum, string dataName, UXFDataType dataType, int optionalTrialNumber = 0);
+        public abstract string HandleJSONSerializableObjectList(List<object> serializableObject, string experiment, string ppid, int sessionNum, string dataName, UXFDataType dataType, int optionalTrialNumber = 0);
         public abstract string HandleJSONSerializableObject(Dictionary<string, object> serializableObject, string experiment, string ppid, int sessionNum, string dataName, UXFDataType dataType, int optionalTrialNumber = 0);
         public abstract string HandleText(string text, string experiment, string ppid, int sessionNum, string dataName, UXFDataType dataType, int optionalTrialNumber = 0);
         public abstract string HandleBytes(byte[] bytes, string experiment, string ppid, int sessionNum, string dataName, UXFDataType dataType, int optionalTrialNumber = 0);
@@ -103,7 +103,7 @@ namespace UXF
     public interface IDataAssociatable
     {
         void SaveDataTable(UXFDataTable table, string dataName, UXFDataType dataType);
-        void SaveJSONSerializableObject(List<object> serializableObject, string dataName, UXFDataType dataType);
+        void SaveJSONSerializableObjectList(List<object> serializableObject, string dataName, UXFDataType dataType);
         void SaveJSONSerializableObject(Dictionary<string, object> serializableObject, string dataName, UXFDataType dataType);
         void SaveText(string text, string dataName, UXFDataType dataType);
         void SaveBytes(byte[] bytes, string dataName, UXFDataType dataType);

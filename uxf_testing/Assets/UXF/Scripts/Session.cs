@@ -551,13 +551,13 @@ namespace UXF
         /// <param name="serializableObject">The data to be saved.</param>
         /// <param name="dataName">Name to be used in saving.</param>
         /// <param name="dataType"></param>
-        public void SaveJSONSerializableObject(List<object> serializableObject, string dataName, UXFDataType dataType = UXFDataType.OtherSessionData)
+        public void SaveJSONSerializableObjectList(List<object> serializableObject, string dataName, UXFDataType dataType = UXFDataType.OtherSessionData)
         {
             if (!CheckDataTypeIsValid(dataName, dataType)) dataType = UXFDataType.OtherSessionData;
             
             foreach(var dataHandler in ActiveDataHandlers)
             {
-                string location = dataHandler.HandleJSONSerializableObject(serializableObject, experimentName, ppid, number, dataName, dataType);
+                string location = dataHandler.HandleJSONSerializableObjectList(serializableObject, experimentName, ppid, number, dataName, dataType);
             }
         }
 

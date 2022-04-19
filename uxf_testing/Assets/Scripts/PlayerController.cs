@@ -41,6 +41,15 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Vector3 obj_pos = other.transform.position;
+
+        if(other.CompareTag("Collectable"))
+        {
+            Debug.Log("Collision :: " + other.name + " " + obj_pos);
+        }
+        
+        
+        
         if(other.gameObject.CompareTag("Collectable"))
         {
             other.gameObject.GetComponent<Renderer>().material.color = Color.cyan;
@@ -51,14 +60,13 @@ public class PlayerController : MonoBehaviour
         {
             session.BeginNextTrial();
             counter ++;
-            //Debug.Log("Trial Started");
-            //Debug.Log(counter);
+            Debug.Log("Trial " + counter + " Started");
         }
 
         if(other.name == "End_Bar" & session.InTrial)
         {
             session.EndCurrentTrial();
-            //Debug.Log("Trial Ended");
+            Debug.Log("Trial " + counter + " Ended");
         }
 
     }

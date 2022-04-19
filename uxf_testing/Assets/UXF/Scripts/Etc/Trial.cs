@@ -196,14 +196,14 @@ namespace UXF
         /// <param name="serializableObject">The data to be saved.</param>
         /// <param name="dataName">Name to be used in saving. It will be appended with the trial number.</param>
         /// <param name="dataType"></param>
-        public void SaveJSONSerializableObject(List<object> serializableObject, string dataName, UXFDataType dataType = UXFDataType.OtherTrialData)
+        public void SaveJSONSerializableObjectList(List<object> serializableObject, string dataName, UXFDataType dataType = UXFDataType.OtherTrialData)
         {
             if (!CheckDataTypeIsValid(dataName, dataType)) dataType = UXFDataType.OtherTrialData;
 
             int i = 0;
             foreach(var dataHandler in session.ActiveDataHandlers)
             {              
-                string location = dataHandler.HandleJSONSerializableObject(serializableObject, session.experimentName, session.ppid, session.number, dataName, dataType, number);
+                string location = dataHandler.HandleJSONSerializableObjectList(serializableObject, session.experimentName, session.ppid, session.number, dataName, dataType, number);
                 result[string.Format("{0}_location_{1}", dataName, i++)] = location.Replace("\\", "/");
             }
         }
