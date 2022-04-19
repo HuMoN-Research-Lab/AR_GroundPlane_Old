@@ -9,6 +9,27 @@ public class LoadCollectables : MonoBehaviour
 {  
     public TextAsset initial_load_list;
 
+    public TextAsset instantiate_list;
+
+    public void InstantiateCollectables()
+    {   
+        Debug.Log("In InstantiateCollectables");
+
+        // split up the data by line
+        string[] load_info = instantiate_list.text.Split(new char[] { '\n' });
+
+        for (int i = 1; i < load_info.Length -1; i++)
+        {
+            string[] col = load_info[i].Split(new char[] { ',' } );
+            
+            GameObject this_prefab = Resources.Load ("Collectable 1") as GameObject;
+            GameObject generic_collectable = Instantiate(this_prefab) as GameObject;
+
+            generic_collectable.transform.position = new Vector3(float.Parse(col[0]),float.Parse(col[1]),float.Parse(col[2]));
+        }
+    }
+
+
     //public GameObject collectable;
     public void BuildCollectables()
     {

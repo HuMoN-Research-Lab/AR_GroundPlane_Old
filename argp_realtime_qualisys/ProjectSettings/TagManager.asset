@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Start_Bar
+  - End_Zone
+  - Terrain_Feature
   layers:
   - Default
   - TransparentFX
