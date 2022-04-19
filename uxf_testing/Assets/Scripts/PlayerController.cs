@@ -8,6 +8,10 @@ using UXF;
 public class PlayerController : MonoBehaviour
 {
     public Session session;
+
+    public TrialTimer TrialTimer;
+
+    private bool repeatTrial;
     public float speed = 0;
 
     private Rigidbody rb;
@@ -61,11 +65,18 @@ public class PlayerController : MonoBehaviour
             session.BeginNextTrial();
             counter ++;
             Debug.Log("Trial " + counter + " Started");
+
+            // start the Trial Timer
+            TrialTimer.StartTrialTimer();
         }
+
 
         if(other.name == "End_Bar" & session.InTrial)
         {
             session.EndCurrentTrial();
+            
+            TrialTimer.EndTrialTimer();
+
             Debug.Log("Trial " + counter + " Ended");
         }
 

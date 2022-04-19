@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,7 +7,6 @@ using System.IO;
 
 public class LoadCollectables : MonoBehaviour
 {  
-    public TextAsset trial_list;
     public TextAsset initial_load_list;
 
     //public GameObject collectable;
@@ -31,9 +30,6 @@ public class LoadCollectables : MonoBehaviour
                 generic_collectable.transform.position = new Vector3(float.Parse(col[0]),float.Parse(col[1]),float.Parse(col[2]));
                 // rename the object
                 generic_collectable.name = col[4];
-                // add PositionRotationTracker to each of the objects
-                //PositionRotationTracker collectable_tracker = generic_collectable.AddComponent<PositionRotationTracker>() as PositionRotationTracker;
-                
 
             }
 
@@ -45,7 +41,6 @@ public class LoadCollectables : MonoBehaviour
                 generic_collectable.transform.position = new Vector3(float.Parse(col[0]),float.Parse(col[1]),float.Parse(col[2]));
                 // rename the object
                 generic_collectable.name = col[4];
-                //PositionRotationTracker collectable_tracker = generic_collectable.AddComponent<PositionRotationTracker>() as PositionRotationTracker;
 
             }
  
@@ -70,14 +65,9 @@ public class LoadCollectables : MonoBehaviour
             // Split up text by commas to give us each column
             string[] col_fn = file_name_rows[i].Split(new char[] { ',' } );
 
-            //if(col_fn[3] =="C1") // I don't think we need the if statement here because each object has its own unique id
-            //{
             string prefab_id = col_fn[4];
             GameObject this_collectable = GameObject.Find(prefab_id);
             this_collectable.transform.position = new Vector3(float.Parse(col_fn[0]),0.3f,float.Parse(col_fn[2]));
-            //}
-
-
 
             Debug.Log("idXYZ :: " + prefab_id + this_collectable.transform.position);
 
