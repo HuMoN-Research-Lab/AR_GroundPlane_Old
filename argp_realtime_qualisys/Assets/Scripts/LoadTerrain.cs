@@ -26,7 +26,7 @@ public class LoadTerrain : MonoBehaviour
         string file_name = trial.settings.GetString("File");
         Debug.Log("Name of Trial File: " + file_name);
 
-        TextAsset terrain_file = Resources.Load<TextAsset>("Configuration_4_VisEasy_BioEasy");
+        TextAsset terrain_file = Resources.Load<TextAsset>(file_name);
         Debug.Log(Resources.Load(file_name));
         Debug.Log(terrain_file);
 

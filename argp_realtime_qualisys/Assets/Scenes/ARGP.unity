@@ -781,6 +781,7 @@ GameObject:
   - component: {fileID: 594435761}
   - component: {fileID: 594435760}
   - component: {fileID: 594435759}
+  - component: {fileID: 594435762}
   m_Layer: 0
   m_Name: Hit_Box_Right
   m_TagString: Start_Bar
@@ -796,7 +797,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 594435757}
   m_LocalRotation: {x: -0.5, y: 0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: 1.5, y: 0, z: 14.85587}
+  m_LocalPosition: {x: 1.92, y: 0, z: 14.85587}
   m_LocalScale: {x: 2.3, y: 0.001, z: 0.1}
   m_Children: []
   m_Father: {fileID: 1094239055}
@@ -862,6 +863,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 594435757}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &594435762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594435757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3424cadeb81b5b40a611c0a9dcc8c4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  session: {fileID: 1859805897}
 --- !u!1001 &607072772
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -935,7 +949,7 @@ PrefabInstance:
     - target: {fileID: 114916036141644208, guid: 0a3b6392f04558844bd340e68ced1ff9,
         type: 3}
       propertyPath: onSessionBegin.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114916036141644208, guid: 0a3b6392f04558844bd340e68ced1ff9,
         type: 3}
@@ -995,7 +1009,7 @@ PrefabInstance:
     - target: {fileID: 114916036141644208, guid: 0a3b6392f04558844bd340e68ced1ff9,
         type: 3}
       propertyPath: onTrialBegin.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: MoveTerrainFeatures
+      value: GenerateTerrain
       objectReference: {fileID: 0}
     - target: {fileID: 114916036141644208, guid: 0a3b6392f04558844bd340e68ced1ff9,
         type: 3}
@@ -2763,8 +2777,9 @@ GameObject:
   - component: {fileID: 1622096265}
   - component: {fileID: 1622096264}
   - component: {fileID: 1622096263}
+  - component: {fileID: 1622096267}
   m_Layer: 0
-  m_Name: End_Zone_Right
+  m_Name: Zone_Right
   m_TagString: End_Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2778,7 +2793,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1622096261}
   m_LocalRotation: {x: -0.5, y: 0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: 5.27, y: 0.015299797, z: 14.855871}
+  m_LocalPosition: {x: 3.96, y: 0.015299797, z: 14.855871}
   m_LocalScale: {x: 4, y: 0.001, z: 4}
   m_Children: []
   m_Father: {fileID: 1094239055}
@@ -2856,6 +2871,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1622096261}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1622096267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622096261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3424cadeb81b5b40a611c0a9dcc8c4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  session: {fileID: 1859805897}
 --- !u!1 &1743289886
 GameObject:
   m_ObjectHideFlags: 0
@@ -2947,8 +2975,9 @@ GameObject:
   - component: {fileID: 1846213838}
   - component: {fileID: 1846213837}
   - component: {fileID: 1846213836}
+  - component: {fileID: 1846213841}
   m_Layer: 0
-  m_Name: End_Zone_Left
+  m_Name: Zone_Left
   m_TagString: End_Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3034,12 +3063,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1846213835}
   m_LocalRotation: {x: -0.5, y: 0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: -5.41, y: 0, z: 14.868107}
+  m_LocalPosition: {x: -4.01, y: 0, z: 14.868107}
   m_LocalScale: {x: 4, y: 0.001, z: 4}
   m_Children: []
   m_Father: {fileID: 963194228}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1846213841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846213835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3669ecc3a5f3df14fb1fb597149bcf55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  session: {fileID: 1859805897}
 --- !u!114 &1859805897 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114916036141644208, guid: 0a3b6392f04558844bd340e68ced1ff9,
