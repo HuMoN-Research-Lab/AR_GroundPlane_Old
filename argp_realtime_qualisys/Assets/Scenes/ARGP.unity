@@ -2132,7 +2132,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1260252982
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3381,7 +3381,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7d07a315d24b7f41bbc9873c21cab26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  all_terrain_load_list: {fileID: 4900000, guid: 62317955744cb6742948c65f976563bf,
+  prefab_distractor: {fileID: 6938251681040704204, guid: 52aa77533f99c224e89a6f14a167a9d4,
+    type: 3}
+  prefab_target_10: {fileID: 7437686572083703912, guid: 338c7d14aab758b4c81bef0c14824657,
+    type: 3}
+  prefab_target_80: {fileID: 5744830355251749816, guid: fa21656ef24d36a499c3f50dd9a6361a,
     type: 3}
 --- !u!114 &1894036716
 MonoBehaviour:
