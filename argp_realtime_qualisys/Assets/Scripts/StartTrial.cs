@@ -6,13 +6,14 @@ using UXF;
 
 public class StartTrial : MonoBehaviour
 {
+    public LoadTerrain terrain_bool;
     public Session session;
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter()
     {
+        //GameObject g = GameObject.Find
         if(!session.InTrial)
         {
-            Debug.Log(other.name);
-
+            terrain_bool.is_mirrored = false;
             session.BeginNextTrial();
         }
     }

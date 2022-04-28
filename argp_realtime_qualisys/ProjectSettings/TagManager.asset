@@ -5,8 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Start_Bar
-  - End_Zone
   - Terrain_Feature
+  - End_Bar
   layers:
   - Default
   - TransparentFX
