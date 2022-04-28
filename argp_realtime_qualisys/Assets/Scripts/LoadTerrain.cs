@@ -26,9 +26,7 @@ public class LoadTerrain : MonoBehaviour
         string file_name = trial.settings.GetString("File");
         Debug.Log("Name of Trial File: " + file_name);
 
-        TextAsset terrain_file = Resources.Load<TextAsset>(file_name);
-        Debug.Log(Resources.Load(file_name));
-        Debug.Log(terrain_file);
+        TextAsset terrain_file = Resources.Load<TextAsset>(file_name); // feed in the file name without `.csv` appended to it
 
         // split up the data by line
         string[] terrain_info = terrain_file.text.Split(new char[] { '\n' });

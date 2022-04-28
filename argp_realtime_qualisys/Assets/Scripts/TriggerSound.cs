@@ -13,11 +13,9 @@ public class TriggerSound : MonoBehaviour
 
 
     /// OnTriggerStay is called almost every frame; https://docs.unity3d.com/ScriptReference/Collider.OnTriggerStay.html
-    void OnTriggerStay(Collider other)
+    void OnTriggerStay()
     {
-        // at some point, I need to alter this if statement to take in foot plate markers only
-        //if(other.name == "L-Frame O") 
-        //{
+
         dwell_time_tracker += 1; // add to the tracker for every frame
     
 
@@ -31,11 +29,9 @@ public class TriggerSound : MonoBehaviour
         //}
     }
 
-    void OnTriggerExit(Collider other)
+    void OnTriggerExit()
     {
-        // at some point, I need to alter this if statement to take in foot plate markers only
-        //if(other.name == "L-Frame O")
-        //{
+
         dwell_time_tracker = 0;
          
         

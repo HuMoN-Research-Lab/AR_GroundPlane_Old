@@ -7,10 +7,12 @@ using UXF;
 public class StartTrial : MonoBehaviour
 {
     public Session session;
-    void OnTriggerEnter()
+    void OnTriggerEnter(Collider other)
     {
         if(!session.InTrial)
         {
+            Debug.Log(other.name);
+
             session.BeginNextTrial();
         }
     }
