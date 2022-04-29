@@ -10,7 +10,6 @@ public class StartTrial : MonoBehaviour
     public Session session;
     void OnTriggerEnter()
     {
-        //GameObject g = GameObject.Find
         if(!session.InTrial)
         {
             terrain_bool.is_mirrored = false;

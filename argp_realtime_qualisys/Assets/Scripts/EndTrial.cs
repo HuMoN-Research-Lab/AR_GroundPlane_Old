@@ -11,7 +11,7 @@ public class EndTrial : MonoBehaviour
     {
         if(session.InTrial)
         {
-            Debug.Log("ending trial");
+            Debug.Log("Ending Trial");
             session.EndCurrentTrial();
 
             GameObject[] terrain_features;

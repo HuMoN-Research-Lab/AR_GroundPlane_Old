@@ -23,8 +23,8 @@ public class LoadTerrain : MonoBehaviour
     public void GenerateTerrain(Trial trial)
     {
 
-        Debug.Log("In GenerateTerrain!");
-        Debug.Log(is_mirrored);
+        Debug.Log("Terrain is Loaded");
+        //Debug.Log(is_mirrored);
         // get the positions of each of the projectors
         var Projector1_Pos_XYZ = GameObject.Find("CamProjector1").transform.position;
         var Projector2_Pos_XYZ = GameObject.Find("CamProjector2").transform.position;
@@ -51,7 +51,7 @@ public class LoadTerrain : MonoBehaviour
             // Loop through the length of the list and create game objects
             // subtract 1 from length because Unity reads in an empty line at the end
             // start at i = 1 because we're giving our csv a header
-            Debug.Log(terrain_info.Length);
+            //Debug.Log(terrain_info.Length);
             for (int i = 1; i < terrain_info.Length -1; i++)
             {   
                 // Split up terrain by commas to give us each column
@@ -81,7 +81,9 @@ public class LoadTerrain : MonoBehaviour
                         // add the x,z position of the appropriate camera to the position of the game object
                         distractor.transform.position = new Vector3(float.Parse(col[0])+Projector3_Pos_XYZ[0],0,float.Parse(col[2])+Projector3_Pos_XYZ[2] );
                         
-                    } 
+                    }
+
+                    Debug.Log("Obs Loc:" + distractor.transform.position.ToString("F4"));
 
                 }
                 
@@ -111,6 +113,8 @@ public class LoadTerrain : MonoBehaviour
                         target_10.transform.position = new Vector3(float.Parse(col[0])+Projector3_Pos_XYZ[0],0,float.Parse(col[2])+Projector3_Pos_XYZ[2] );
                         
                     }
+
+                    Debug.Log("Tar Loc:" + target_10.transform.position.ToString("F4"));
                 }
 
                 if (col[3] == "C80")
@@ -138,6 +142,8 @@ public class LoadTerrain : MonoBehaviour
                         target_80.transform.position = new Vector3(float.Parse(col[0])+Projector3_Pos_XYZ[0],0,float.Parse(col[2])+Projector3_Pos_XYZ[2] );
                         
                     }
+
+                    Debug.Log("Tar Loc:" + target_80.transform.position.ToString("F4"));
                 }
 
             }
@@ -164,7 +170,7 @@ public class LoadTerrain : MonoBehaviour
             // Loop through the length of the list and create game objects
             // subtract 1 from length because Unity reads in an empty line at the end
             // start at i = 1 because we're giving our csv a header
-            Debug.Log(terrain_info.Length);
+            //Debug.Log(terrain_info.Length);
             for (int i = 1; i < terrain_info.Length -1; i++)
             {   
                 // Split up terrain by commas to give us each column
@@ -196,6 +202,8 @@ public class LoadTerrain : MonoBehaviour
                         
                     } 
 
+                    Debug.Log("Obs Loc:" + distractor.transform.position.ToString("F4"));
+
                 }
                 
 
@@ -224,6 +232,8 @@ public class LoadTerrain : MonoBehaviour
                         target_10.transform.position = new Vector3(float.Parse(col[0])+Projector3_Pos_XYZ[0],0,float.Parse(col[2])+Projector3_Pos_XYZ[2] );
                         
                     }
+
+                    Debug.Log("Tar Loc:" + target_10.transform.position.ToString("F4"));
                 }
 
                 if (col[3] == "C80")
@@ -251,6 +261,8 @@ public class LoadTerrain : MonoBehaviour
                         target_80.transform.position = new Vector3(float.Parse(col[0])+Projector3_Pos_XYZ[0],0,float.Parse(col[2])+Projector3_Pos_XYZ[2] );
                         
                     }
+
+                    Debug.Log("Tar Loc:" + target_80.transform.position.ToString("F4"));
                 }
 
             }

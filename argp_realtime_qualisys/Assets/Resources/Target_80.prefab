@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 5744830355251749763}
   - component: {fileID: 5744830355251749820}
   - component: {fileID: 5744830355251749821}
-  - component: {fileID: 5744830355251749822}
   - component: {fileID: 5744830355251749823}
+  - component: {fileID: 2867009807238646858}
   m_Layer: 0
   m_Name: Target_80
   m_TagString: Terrain_Feature
@@ -96,20 +96,6 @@ CapsuleCollider:
   m_Height: 200
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &5744830355251749822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5744830355251749816}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c25638e1dedc7e44b8f81357a43da48, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundTrigger: {fileID: 8300000, guid: c7244086f369793449f36927d62dba6a, type: 3}
-  dwell_time_threshold: 20
 --- !u!54 &5744830355251749823
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -126,3 +112,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &2867009807238646858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5744830355251749816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc62676b1842cf944ae541015de2c53b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundTrigger: {fileID: 8300000, guid: c7244086f369793449f36927d62dba6a, type: 3}
+  dwell_time_threshold: 20
